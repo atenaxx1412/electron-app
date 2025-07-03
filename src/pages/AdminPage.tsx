@@ -403,7 +403,7 @@ const AdminPage: React.FC = () => {
   const handleLogout = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('token');
-    navigate('/');
+    navigate('/', { replace: true });
   };
 
   // プロフィール保存ハンドラー

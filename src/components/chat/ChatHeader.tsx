@@ -98,7 +98,7 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
   const confirmLogout = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('token');
-    navigate('/');
+    navigate('/', { replace: true });
   };
 
 
@@ -203,24 +203,24 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
         <div className="flex items-center space-x-4">
           <button
             onClick={() => setShowHistoryModal(true)}
-            className="p-2 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
+            className="p-3 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             title="履歴"
           >
-            <History size={20} />
+            <History size={22} />
           </button>
           <button
             onClick={() => setShowSettingsModal(true)}
-            className="p-2 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
+            className="p-3 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             title="設定"
           >
-            <Settings size={20} />
+            <Settings size={22} />
           </button>
           <button
             onClick={handleLogout}
-            className="p-2 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
+            className="p-3 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             title="ログアウト"
           >
-            <LogOut size={20} />
+            <LogOut size={22} />
           </button>
         </div>
       </div>
